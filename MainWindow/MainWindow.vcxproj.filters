@@ -30,8 +30,13 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="bitcoin_logo_icon_170476.ico">
+    <Image Include="cursor_filled_icon_200712.ico">
       <Filter>Resource Files</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cursor1.cur">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{41d3b4cb-821e-4fab-85ac-6c3b6f3ad959}</ProjectGuid>
-    <RootNamespace>DialogBox</RootNamespace>
+    <ProjectGuid>{3f117357-9a26-4548-aa01-8ee38c33982f}</ProjectGuid>
+    <RootNamespace>ListBox</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -148,7 +148,7 @@
     <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="bitcoin_logo_icon_170476.ico" />
+    <Image Include="bnb_crypto_icon_264355.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

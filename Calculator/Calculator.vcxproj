@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{41d3b4cb-821e-4fab-85ac-6c3b6f3ad959}</ProjectGuid>
-    <RootNamespace>DialogBox</RootNamespace>
+    <ProjectGuid>{1e35ae9b-e951-44e6-a45a-5223155e032c}</ProjectGuid>
+    <RootNamespace>Calculator</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -148,7 +148,7 @@
     <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="bitcoin_logo_icon_170476.ico" />
+    <Image Include="ico\1486564177-finance-finance-calculator_81497.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

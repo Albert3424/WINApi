@@ -30,7 +30,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="bitcoin_logo_icon_170476.ico">
+    <Image Include="ico\1486564177-finance-finance-calculator_81497.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

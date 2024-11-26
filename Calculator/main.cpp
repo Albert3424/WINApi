@@ -128,7 +128,6 @@ INT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 					GetModuleHandle(NULL),
 					NULL
 				);
-				SetSkin(hwnd, "square_blue");
 			}
 		}
 
@@ -221,6 +220,7 @@ INT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			GetModuleHandle(NULL),
 			NULL
 		);
+		SetSkin(hwnd, "square_blue");
 	}
 		break;
 	case WM_COMMAND:
@@ -335,6 +335,28 @@ INT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		}
 	}
 	break;
+	case WM_CONTEXTMENU:
+	{
+		HMENU hSubmenuSkins = CreatePopupMenu();
+		InsertMenu(hSubmenuSkins, 0, MF_BYPOSITION | MF_STRING, IDR_METAL_MISTRAL, "Metal Mistral");
+		InsertMenu(hSubmenuSkins, 0, MF_BYPOSITION | MF_STRING, IDR_SQUARE_BLUE, "Square Blue");
+
+		HMENU hMenu = CreatePopupMenu();
+		InsertMenu(hMenu, 0, MF_BYPOSITION | MF_POPUP, (UINT_PTR)hSubmenuSkins, "Skins");
+		InsertMenu(hMenu, 1, MF_BYPOSITION | MF_SEPARATOR, 0, 0);
+		InsertMenu(hMenu, 2, MF_BYPOSITION || MF_STRING, IDR_EXIT, "Exit");
+		switch (TrackPopupMenu(hMenu, TPM_LEFTALIGN | TPM_BOTTOMALIGN | TPM_RETURNCMD, LOWORD(lParam), HIWORD(lParam), 0, hwnd, 0))
+		{
+		case IDR_SQUARE_BLUE: SetSkin(hwnd, "square_blue"); break;
+		case IDR_METAL_MISTRAL: SetSkin(hwnd, "metal_mistral"); break;
+		case IDR_EXIT: DestroyWindow(hwnd);
+		}
+
+		DestroyMenu(hSubmenuSkins);
+		DestroyMenu(hMenu);
+	}
+	break;
+	//////////////////////////
 	case WM_DESTROY:
 		PostQuitMessage(0);
 		break;
@@ -370,9 +392,7 @@ CONST CHAR* g_BUTTON_FILENAME[] =
 
 VOID SetSkin(HWND hwnd, CONST CHAR* skin)
 {
-	//CHAR sz_path[MAX_PATH]{};
 	CHAR sz_filename[FILENAME_MAX]{};
-	//CHAR sz_full_name[MAX_PATH]{};
 	for (int i = 0; i < 18; i++)
 	{
 		HWND hButton = GetDlgItem(hwnd, IDC_BUTTON_0 + i);
